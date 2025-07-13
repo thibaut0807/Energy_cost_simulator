@@ -1,0 +1,28 @@
+<form id="energy-form">
+  <div id="appliance-list">
+    <div class="appliance">
+      <label>Appliance Name:</label>
+      <input type="text" class="name" placeholder="e.g. Fan" required>
+
+      <label>Power (Watts):</label>
+      <input type="number" class="power" required>
+
+      <label>Daily Usage (Hours):</label>
+      <input type="number" class="hours" step="0.1" required>
+    </div>
+  </div>
+
+  <button type="button" id="add-appliance">➕ Add Appliance</button>
+
+  <label>Days per Month:</label>
+  <input type="number" id="days" value="30" required>
+
+  <label>Electricity Rate (per kWh):</label>
+  <input type="number" id="rate" step="0.01" required>
+
+  <button type="submit">🧮 Calculate Total</button>
+  <button type="button" id="reset-btn">🔄 Reset</button>
+</form>
+<div id="result"></div>
+
+<p class="credit">Built by <strong>Codjo Thibaut GBAMINTON</strong></p>

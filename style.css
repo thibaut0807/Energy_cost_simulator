@@ -1,0 +1,13 @@
+.appliance {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #f1f9ff;
+}
+
+.credit {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #555;
+}

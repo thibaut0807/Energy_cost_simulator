@@ -1,64 +1,59 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Simulateur de Coût Énergétique</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
 <body>
   <div class="container">
     <h1 data-fr="Simulateur de Coût Énergétique" data-en="Energy Cost Simulator">Simulateur de Coût Énergétique</h1>
 
-    <form id="energy-form">
-      <label>🔢 Méthode de calcul :</label>
-      <select id="calculation-method">
-        <option value="appliance">📟 Par appareils</option>
-        <option value="kwh">📊 Par relevé compteur</option>
-      </select>
+    <!-- Choix de méthode -->
+    <label>🔢 <span data-fr="Méthode de calcul :" data-en="Calculation Method:">Méthode de calcul :</span></label>
+    <select id="method">
+      <option value="compteur" selected>📊 Par relevé compteur</option>
+      <option value="appareils">🔌 Par appareils</option>
+    </select>
 
-      <div id="appliance-section">
-        <div id="appliance-list">
-          <div class="appliance">
-            <label>Nom de l'appareil :</label>
-            <input type="text" class="name" placeholder="ex: Ventilateur" required>
-            <label>Puissance (Watts) :</label>
-            <input type="number" class="power" required>
-            <label>Heures par jour :</label>
-            <input type="number" class="hours" step="0.1" required>
-          </div>
-        </div>
-        <button type="button" id="add-appliance">➕ Ajouter un appareil</button>
-        <label>Jours par mois :</label>
-        <input type="number" id="days" value="30" required>
-      </div>
-
-      <div id="kwh-section" style="display:none;">
-        <label>🔌 kWh relevé :</label>
-        <input type="number" id="kwh-input" placeholder="ex: 150" step="0.1">
-      </div>
+    <!-- MODE 1 : Par compteur -->
+    <div id="compteur-mode">
+      <label>🔌 kWh relevé :</label>
+      <input type="number" id="kwh-input" placeholder="Ex: 150" />
 
       <label>💰 Prix du kWh :</label>
-      <input type="number" id="rate" step="0.01" required>
+      <input type="number" id="rate-compteur" placeholder="Ex: 100" />
+    </div>
 
-      <label>💱 Devise :</label>
-      <select id="currency">
-        <option value="FCFA">FCFA</option>
-        <option value="€">€</option>
-        <option value="$">$</option>
-        <option value="DH">DH</option>
-      </select>
+    <!-- MODE 2 : Par appareils -->
+    <div id="appareil-mode" style="display: none;">
+      <div id="appliance-list">
+        <div class="appliance">
+          <input type="text" class="name" placeholder="Appareil (e.g. Ventilateur)" />
+          <input type="number" class="power" placeholder="Puissance (W)" />
+          <input type="number" class="hours" placeholder="Heures/jour" step="0.1" />
+        </div>
+      </div>
+      <button type="button" id="add-appliance">➕ Ajouter un appareil</button>
 
-      <button type="submit">📊 Calculer</button>
-      <button type="button" id="reset-btn">🔄 Réinitialiser</button>
-    </form>
+      <label>📅 Jours/mois :</label>
+      <input type="number" id="days" value="30" />
+      <label>💰 Prix du kWh :</label>
+      <input type="number" id="rate-appareil" placeholder="Ex: 100" />
+    </div>
 
-    <div id="result"></div>
-    <canvas id="energyChart" width="400" height="200"></canvas>
+    <!-- Devise -->
+    <label>💱 <span data-fr="Devise :" data-en="Currency:">Devise :</span></label>
+    <select id="currency">
+      <option value="FCFA">FCFA</option>
+      <option value="€">€</option>
+      <option value="$">$</option>
+      <option value="DH">DH</option>
+    </select>
+
+    <!-- Boutons -->
+    <button id="calculate">📊 Calculer</button>
+    <button id="reset">🔄 Réinitialiser</button>
     <button id="toggleLang">🇬🇧 English</button>
-  </div>
-  <p class="credit"><strong>Codjo Thibaut GBAMINTON</strong></p>
 
-  <script src="script.js"></script>
+    <!-- Résultat -->
+    <div id="result"></div>
+
+    <!-- Graphique (pour mode appareils uniquement) -->
+    <canvas id="chart" style="max-height: 400px; margin-top: 20px; display: none;"></canvas>
+
+    <script src="script.js"></script>
 </body>
-</html>

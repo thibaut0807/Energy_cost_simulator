@@ -1,13 +1,15 @@
-.appliance {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  background-color: #f1f9ff;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f9ff;
+  padding: 30px;
 }
-
-.credit {
-  margin-top: 30px;
-  font-size: 14px;
-  color: #555;
+.container {
+  max-width: 650px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+button {
+  margin-top: 10px;
 }

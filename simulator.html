@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulateur de Coût Énergétique</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <form id="energy-form">
+    <label>kWh relevé :</label>
+    <input type="number" id="kwh-input" required>
+
+    <label>Prix du kWh :</label>
+    <input type="number" id="rate" required>
+
+    <label>Devise :</label>
+    <select id="currency">
+      <option value="FCFA">FCFA</option>
+      <option value="€">€</option>
+      <option value="$">$</option>
+      <option value="DH">DH</option>
+    </select>
+
+    <button type="submit">Calculer</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

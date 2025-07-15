@@ -111,3 +111,15 @@ document.getElementById("toggleLang").addEventListener("click", () => {
   });
   document.getElementById("toggleLang").textContent = lang === "fr" ? "🇬🇧 English" : "🇫🇷 Français";
 });
+// 📄 Export PDF
+document.getElementById("exportPDF").addEventListener("click", () => {
+  const content = document.querySelector('.container');
+  const opt = {
+    margin:       0.5,
+    filename:     'simulation_energie.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
+  html2pdf().from(content).set(opt).save();
+});

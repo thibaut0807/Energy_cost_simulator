@@ -52,3 +52,42 @@ button:hover {
 #energyChart {
   margin-top: 30px;
 }
+/* ✅ Responsive design pour petits écrans */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input, select, button {
+    font-size: 16px;
+  }
+
+  .appliance {
+    flex-direction: column;
+  }
+
+  .appliance input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #chart {
+    max-height: 300px;
+  }
+}

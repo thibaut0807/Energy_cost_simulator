@@ -4,6 +4,22 @@
 <div id="welcome-banner" class="welcome-banner">
   👋 Bienvenue sur le simulateur de coût énergétique !
 </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'ergyCostSimulator');
+  </script>
+</head>
 <body>
   <div class="container">
     <h1 data-fr="Simulateur de Coût Énergétique" data-en="Energy Cost Simulator">Simulateur de Coût Énergétique</h1>
@@ -34,6 +50,7 @@
         </div>
       </div>
       <button type="button" id="add-appliance">➕ Ajouter un appareil</button>
+      
 
       <label>📅 Jours/mois :</label>
       <input type="number" id="days" value="30" />
@@ -53,8 +70,8 @@
     <!-- Boutons -->
     <button id="calculate">📊 Calculer</button>
     <button id="reset">🔄 Réinitialiser</button>
-    <button id="toggleLang">🇬🇧 English</button>
     <button id="exportPDF">📄 Exporter en PDF</button>
+    <a href="contact.html"><button>📩 Contact</button></a>
 
     <!-- Résultat -->
     <div id="result"></div>
@@ -64,3 +81,4 @@
 
     <script src="script.js"></script>
 </body>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Simulateur</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 data-fr="📩 Contactez-moi" data-en="📩 Contact Me">📩 Contactez-moi</h1>
+    <p data-fr="Vous avez une question, suggestion ou besoin d’aide ? Remplissez ce formulaire."
+       data-en="Have a question, suggestion or need help? Fill out this form.">
+       Vous avez une question, suggestion ou besoin d’aide ? Remplissez ce formulaire.
+    </p>
+
+    <form action="https://formspree.io/f/moqggzjj" method="POST">
+      <label data-fr="Nom :" data-en="Name:">Nom :</label>
+      <input type="text" name="name" required placeholder="Votre nom" />
+
+      <label data-fr="Adresse e-mail :" data-en="Email:">Adresse e-mail :</label>
+      <input type="email" name="email" required placeholder="votre@email.com" />
+
+      <label data-fr="Message :" data-en="Message:">Message :</label>
+      <textarea name="message" rows="5" required placeholder="Votre message ici..."></textarea>
+
+      <button type="submit" data-fr="Envoyer" data-en="Send">Envoyer</button>
+    </form>
+
+    <a href="index.html"><button class="secondary-btn">🏠 Retour à l'accueil</button></a>
+    <button id="toggleLang">🇬🇧 English</button>
+  </div>
+
+  <footer class="signature">
+    © 2025 Codjo Thibaut GBAMINTON — Contact : 
+    <a href="mailto:thibautgbaminton@gmail.com">thibautgbaminton@gmail.com</a>
+  </footer>
+
+  <script>
+    document.getElementById("toggleLang").addEventListener("click", () => {
+      const lang = document.documentElement.lang === "fr" ? "en" : "fr";
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-fr]").forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+      });
+      document.getElementById("toggleLang").textContent = lang === "fr" ? "🇬🇧 English" : "🇫🇷 Français";
+    });
+  </script>
+</body>
+</html>

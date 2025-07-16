@@ -91,3 +91,25 @@ button:hover {
     max-height: 300px;
   }
 }
+.signature {
+  position: fixed;
+  bottom: 8px;
+  left: 12px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  font-style: normal;
+}
+
+.signature a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signature a:hover {
+  text-decoration: underline;
+}
+
+body.dark-mode .signature {
+  color: #ccc;
+}

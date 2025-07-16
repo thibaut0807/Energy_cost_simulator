@@ -113,3 +113,64 @@ button:hover {
 body.dark-mode .signature {
   color: #ccc;
 }
+/* 🔄 Responsive général */
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+/* 📱 Pour les petits écrans */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2, h3 {
+    font-size: 1.4em;
+  }
+
+  button, .primary-btn, .secondary-btn {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  input, select {
+    width: 100% !important;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  .appliance {
+    margin-bottom: 20px;
+  }
+
+  .hero {
+    padding: 40px 10px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  #chart {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .signature {
+    font-size: 12px;
+    line-height: 1.4;
+    left: 8px;
+    bottom: 6px;
+  }
+}
